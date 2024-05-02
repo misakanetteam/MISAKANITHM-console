@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN" class="mdui-theme-auto" style="height:100%">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <meta name="renderer" content="webkit" />
+
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script src="main.js"></script>
+
+    <title id="title">MISAKANITHM Console</title>
+</head>
+
+<body style="height:90%">
+    <mdui-snackbar id="main-snackbar"></mdui-snackbar>
+
+    <mdui-dialog id="device-connect-dialog" headline="选择设备以进行连接">
+        <mdui-button full-width icon="link" id="button-connect">连接</mdui-button>
+    </mdui-dialog>
+
+    <mdui-dialog id="bootloader-dialog" close-on-overlay-click headline="是否进入升级模式" description="点击空白区域返回">
+        <mdui-button full-width icon="check" id="button-bl-confirm">确定</mdui-button>
+    </mdui-dialog>
+
+    <div style="position: relative;overflow: hidden">
+        <mdui-top-app-bar scroll-behavior="elevate" scroll-target=".scroll-target">
+            <mdui-button-icon icon="menu" class="button-menu"></mdui-button-icon>
+            <mdui-top-app-bar-title>MISAKANITHM Console</mdui-top-app-bar-title>
+        </mdui-top-app-bar>
+
+        <mdui-navigation-drawer id="main-drawer">
+            <mdui-list>
+                <mdui-list-subheader>菜单</mdui-list-subheader>
+                <mdui-list-item icon="info" id="button-info">概览</mdui-list-item>
+                <mdui-list-item icon="settings" id="button-sensitivity">敏感度</mdui-list-item>
+                <mdui-list-item icon="update" id="button-bl">升级模式</mdui-list-item>
+                <mdui-list-item icon="feedback" id="button-about">关于</mdui-list-item>
+            </mdui-list>
+        </mdui-navigation-drawer>
+
+        <div id="tab-content" class="scroll-target"
+            style="height: 100%;overflow: auto;  display: flex;align-items: center;justify-content: center">
+            <mdui-card variant="filled" style="width: 80%;">
+
+                <mdui-list>
+                    <mdui-list-item nonclickable></mdui-list-item>
+                    <mdui-list-item nonclickable>
+                        <h3>固件版本: </h3>
+                    </mdui-list-item>
+                    <mdui-list-item nonclickable>
+                        <h3>硬件类型: </h3>
+                    </mdui-list-item>
+                    <mdui-list-item nonclickable>
+                        <h3>硬件版本: </h3>
+                    </mdui-list-item>
+                    <mdui-list-item nonclickable>
+                        <h3>序列号: </h3>
+                    </mdui-list-item>
+                    <mdui-list-item nonclickable></mdui-list-item>
+                </mdui-list>
+            </mdui-card>
+        </div>
+    </div>
+</body>
+
+</html>
