@@ -129,22 +129,7 @@ $(() => {
             + device_rev + '</h3></mdui-list-item><mdui-list-item nonclickable><h3>序列号: '
             + device_id + '</h3></mdui-list-item><mdui-list-item nonclickable></mdui-list-item></mdui-list></mdui-card>';
     });
-    $("#button-sensitivity")[0].addEventListener("click", () => {
-        $("#tab-content")[0].innerHTML =
-            '<mdui-card variant="filled" style="width: 80%;text-align: center;"><mdui-list><mdui-list-item nonclickable></mdui-list-item>'
-            + '<mdui-list-item nonclickable><h3>调整敏感度前, 请将 MISAKANITHM 置于平整桌面, 双手远离触摸区</h3></mdui-list-item>'
-            + '<mdui-list-item nonclickable><h3>触摸区会依次亮起, 红色代表上半触摸区, 绿色代表下半触摸区</h3></mdui-list-item>'
-            + '<mdui-list-item nonclickable><h3>请在佩戴手套后, 用两根手指依次触摸对应区域, 直到灯光改变</h3></mdui-list-item>'
-            + '<mdui-list-item nonclickable><mdui-button id="button-sensitivity-start">开始调整敏感度</mdui-button>'
-            + '</mdui-list-item><mdui-list-item nonclickable></mdui-list-item></mdui-list></mdui-card>';
 
-        $("#button-sensitivity-start")[0].addEventListener("click", () => {
-            $("#button-sensitivity-start")[0].disabled = true;
-            $("#button-sensitivity-start")[0].loading = true;
-
-            serialWriter.write("ts\n");
-        });
-    });
     $("#button-bl")[0].addEventListener("click", () => {
         $("#bootloader-dialog")[0].open = true;
     });
